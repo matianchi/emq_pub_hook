@@ -54,7 +54,7 @@ on_client_connected(ConnAck, Client = #mqtt_client{client_id  = ClientId,
                                  {protocol, ProtoVer},
                                  {connack, ConnAck},
                                  {ts, emqttd_time:now_secs()}]),
-    Msg = message(1, "chat1", Payload),
+    Msg = message(1, <<"chat1">>, Payload),
     emqttd:publish(emqttd_message:set_flag(sys, Msg)),
     {ok, Client}.
 
