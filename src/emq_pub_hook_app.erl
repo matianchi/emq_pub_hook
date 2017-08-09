@@ -23,7 +23,7 @@
 
 start(_StartType, _StartArgs) ->
     {ok, Sup} = emq_pub_hook_sup:start_link(),
-    emq_pub_hook:load(application:get_all_env()),
+    emq_pub_hook:load(),
     {ok, Sup}.
 
 stop(_State) ->
