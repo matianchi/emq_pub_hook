@@ -16,7 +16,7 @@ dep_emq_pub_hook = git https://github.com/matianchi/emq-pub-hook master
 
 ##### In relx.config
 
-{emq_pubhook_plugin, load}
+{emq_pub_hook_plugin, load}
 
 ##### emq_pub_hook.conf
 ```
