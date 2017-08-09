@@ -31,8 +31,10 @@ pub.hook.rule.session.terminated.1   = {"action": "on_session_terminated"}
 pub.hook.rule.message.publish.1      = {"action": "on_message_publish"}
 pub.hook.rule.message.delivered.1    = {"action": "on_message_delivered"}
 pub.hook.rule.message.acked.1        = {"action": "on_message_acked"}
-
 ```
+##### subscribe
+Subscribe topic 'dataflow' to receive messages.
+
 License
 -------
 
