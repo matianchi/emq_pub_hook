@@ -18,13 +18,13 @@
 
 -behaviour(application).
 
+%% Application callbacks
 -export([start/2, stop/1]).
 
 start(_StartType, _StartArgs) ->
-  {ok, Sup} = emq_pub_hook_sup:start_link(),
-  emq_pub_hook:load(),
-  {ok, Sup}.
+    {ok, Sup} = emq_pub_hook_sup:start_link(),
+    emq_pub_hook:load(),
+    {ok, Sup}.
 
 stop(_State) ->
-  emq_pub_hook:unload(),
-  ok.
+    emq_pub_hook:unload().
