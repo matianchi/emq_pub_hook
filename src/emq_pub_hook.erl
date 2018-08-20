@@ -26,6 +26,8 @@
 -export([on_session_created/3, on_session_subscribed/4, on_session_unsubscribed/4, on_session_terminated/4]).
 -export([on_message_publish/2, on_message_delivered/4, on_message_acked/4]).
 
+-define(LOG(Level, Format, Args), lager:Level("WebHook: " ++ Format, Args)).
+
 load() ->
   RuleList = parse_rule(application:get_env(?APP, rules, [])),
   lists:foreach(fun({Hook, Fun, Filter}) ->

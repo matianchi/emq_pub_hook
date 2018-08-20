@@ -24,7 +24,10 @@
 start(_StartType, _StartArgs) ->
     {ok, Sup} = emq_pub_hook_sup:start_link(),
     emq_pub_hook:load(),
+    emq_pub_hook_config:register(),
     {ok, Sup}.
 
 stop(_State) ->
-    emq_pub_hook:unload().
+    emq_pub_hook:unload(),
+    emq_pub_hook_config:unregister(),
+    ok.
